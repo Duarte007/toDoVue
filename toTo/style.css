@@ -1,0 +1,42 @@
+tr:nth-child(odd) .removed{
+    text-decoration: line-through;
+    color: #0a0606;
+}
+
+tr:nth-child(even) .removed{
+    text-decoration: line-through;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #404040;
+    color: #fff;
+}
+
+.input {
+    margin-left: 25%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 52%;
+    height: 25px;
+}
+
+.button {
+    margin-left: 25%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 52.3%;
+    height: 25px;
+    font: icon;
+}

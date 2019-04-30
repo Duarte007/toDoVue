@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" media="screen, handheld" />
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+
+    <input class="input" v-model="item" type="text" placeholder="to do...">
+    <button @click="addList" class="button">Adicionar</button>
+
+    <table>
+      <tr v-for="item in list">
+        <td><input type="checkbox" name="name" @click="removeItem" />&nbsp;{{item.name}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        item: '',
+        list: []
+      },
+      methods:{
+        addList: function(){
+          if(this.item != '' && this.item != undefined && this.item != null){
+            this.list.push({'name':this.item});
+            this.item = '';
+          }
+        },
+        removeItem: function(){
+          let checked = event.currentTarget.checked;
+          let parentElement = event.currentTarget.parentElement;
+          if(checked){
+            parentElement.classList.value = "removed";
+          } else {
+            parentElement.classList.value = "";
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
